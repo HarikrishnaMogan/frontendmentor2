@@ -1,0 +1,112 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con{
+    width:365px;
+    box-sizing: border-box;
+    background-color: rgb(228, 226, 226);
+    display: grid;
+    grid-template-areas: "profile"
+                           "desc"
+                           "details";
+  gap: 20px;
+}
+.profile{
+    grid-area: profile;
+    width:350px;
+    margin-top: 10px;
+    background-image: url("/images/pattern-bg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    align-items: center;
+    justify-self: center;
+    position: relative;
+}
+.tanya{
+    width: 250px;
+    height:250px;
+    box-shadow: 0px 2px 10px rgb(122, 122, 122);
+    justify-self: center;
+    border-radius: 10px;
+
+}
+.button{
+    position:absolute;
+    background-color: rgb(228, 227, 227);
+    padding: 10px;
+    border-radius: 500px;
+    display:flex;
+    align-items: center;
+    top:83%;
+    box-shadow: 3px 3px 10px rgb(75, 74, 74);
+}
+.button .next{
+   margin-left: 10px;
+}
+.desc{
+    grid-area: desc;
+    text-align: center;
+    font-weight: 500;
+    background-image: url("/images/pattern-quotes.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 10px 20px;
+    align-self: center;
+    z-index: 2;
+}
+.details{
+    grid-area: details;
+    background-image: url(/images/pattern-curve.svg);
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position:left bottom;
+     text-align: center;
+     font-weight: 900;
+     z-index: 2;
+}
+.next:hover,.prev:hover{
+    color:blueviolet;
+}
+.details p:nth-child(2)
+{
+    color:grey;
+    font-weight: 10;
+}
+@media screen and (min-width:1000px) {
+    .con{
+        width:900px;
+        height:400px;
+        grid-template-areas:"desc desc profile"
+                             "details details profile";
+                             padding: 5%;
+        position: relative;
+    }
+    .profile{
+        position: absolute;
+        bottom:0;
+        right:1px;
+        z-index: 1;
+    }
+    .desc{
+        width:60%;
+    
+    }
+    .details{
+        text-align: left;
+        width:50%;
+
+    }
+    .button{
+        z-index: 3;
+    }
+    .details p{
+        display: inline;
+    }
+}
